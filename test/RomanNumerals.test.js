@@ -43,4 +43,16 @@ describe("Input Tests", () => {
 	test("No input error check", () => {
 		expect(() => RomanNumerals()).toThrow(Error);
 	});
+
+	test("Input is String", () => {
+		expect(() => RomanNumerals("Oops")).toThrow(Error);
+	});
+
+	test("Negative number", () => {
+		expect(() => RomanNumerals(-5)).toThrow(Error);
+	});
+
+	test("Decimal Number", () => {
+		expect(() => RomanNumerals(3.85)).toThrow(Error);
+	});
 });

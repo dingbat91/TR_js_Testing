@@ -20,6 +20,10 @@ export function RomanNumerals(...nums) {
 	nums.forEach((num) => {
 		let numeralString = "";
 
+		if (isNaN(num) || num < 0 || !Number.isInteger(num)) {
+			throw new error("Invalid number");
+		}
+
 		for (let currentTotal = num; currentTotal > 0; ) {
 			const REDUCINGNUMERAL = LOOKUP.find((numeral) => {
 				//subraction variable (refactor?)
